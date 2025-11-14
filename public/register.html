@@ -3,16 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' type='text/css' media='screen' href='CSS/login.css'>
-    <title>HERE POP</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="CSS/register.css">
+    <title>Welcome</title>
 </head>
 <body>
-
     <div id="container">
-        <div id="cover"></div>
         <div id="feilds">
-            <h1>Login</h1>
-            <form id="myform">
+            <h1>Register</h1>
+            <form id="myform" action="index.html">
                 <fieldset>
                     <div>
                         <img src="CSS/Pictures/Icons/Frame 6.png" width="25px" height="25px">
@@ -20,17 +18,24 @@
                     </div>
                     <br>
                     <div>
+                        <img src="CSS/Pictures/Icons/Frame 7.png" width="25px" height="25px">
+                        <input type="text" name="email" placeholder="email address">
+                    </div>
+                    <br>
+                    <div>
                         <img src="CSS/Pictures/Icons/Group 1.png" width="20px" height="20px">
                         <input type="text" name="password" placeholder="password">
                     </div>
                     <br>
-                    <input type="submit" value="login" id="submit">
+                    <div>
+                        <img src="CSS/Pictures/Icons/emthy.png" width="20px" height="20px">
+                        <input type="text" name="retrypassword" placeholder="retrypassword">
+                    </div>
+                    <br>
+                    <input type="submit" value="register" id="submit">
                 </fieldset>
             </form>
-            <hr>
-            <a id="register" href="register.html"><h3>Create Account</h3></a>
         </div>
     </div>
-
 </body>
 </html>
