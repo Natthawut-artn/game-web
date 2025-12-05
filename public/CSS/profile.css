@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+     background: url(Pictures/Backgrounds/Untitled\ design.png);
+    background-size: 70%;
+    background-position: center;
+    height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#user-info{
+    background: white;
+    width: 400px;
+    height: 560px;
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    padding: 10px;
+}
+#user-pro{
+    background: url(Pictures/Icons/here.png);
+    background-size: cover;
+    background-position: center;
+    width: 160px;
+    height: 160px;
+    border-radius: 100px;
+    border: 2px black solid;
+}
+#user-miniheart{
+    text-align: center;
+}
+#back{
+    position: absolute;
+    left: 2.5%;
+    top: 2.5%;
+
+    width: 100px;
+    height: 100px;
+}
+#logout{
+    position: absolute;
+    right: 2.5%;
+    bottom: 2.5%;
+
+    width: 100px;
+    height: 100px;
+}
