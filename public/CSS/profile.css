@@ -15,7 +15,7 @@ body{
     justify-content: center;
     align-items: center;
 }
-#user-info{
+#user-info , #user-comment{
     background: white;
     width: 400px;
     height: 560px;
@@ -27,6 +27,8 @@ body{
     align-items: center;
 
     padding: 10px;
+    margin-left: 10px ;
+    margin-right: 10px ;
 }
 #user-pro{
     background: url(Pictures/Icons/here.png);
@@ -55,4 +57,12 @@ body{
 
     width: 100px;
     height: 100px;
+}
+
+#user-comment{
+    justify-content: start;
+    align-items: start;
+    overflow-y: auto;
+
+    padding: 25px;
 }
