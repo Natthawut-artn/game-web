@@ -68,17 +68,17 @@ const queryDB = (sql) => {
 
 // (Register) เพิ่มผู้ใช้ใหม่ลงตาราง User
 app.post('/regisDB', async (req,res) => {
-    const { username, email, password } = req.body; // รับค่าจากฟอร์ม (email ในฟอร์มจะถูกเก็บลง Gmail)
+    const { username, gmail, password } = req.body; // รับค่าจากฟอร์ม (email ในฟอร์มจะถูกเก็บลง Gmail)
 
     try {
         // ตาม Data Dictionary: User (Username, Picture, Password, Gmail)
         // เรากำหนดรูปเริ่มต้นเป็น default.png
         let insertSql = `INSERT INTO ${userTable} (Username, Picture, Password, Gmail) 
-                         VALUES ("${username}", "default.jpeg", "${password}", "${email}")`;
+                         VALUES ("${username}", "default.jpeg", "${password}", "${gmail}")`;
         
         await queryDB(insertSql);
         console.log("New user registered successfully");
-        return res.redirect('login.html');
+        return res.redirect('index.html');
 
     } catch (err) {
         console.error("Error during registration:", err);
