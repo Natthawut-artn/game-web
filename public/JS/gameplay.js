@@ -59,16 +59,26 @@ async function fetchInitialScore() {
 function displayCurrentUser() {
     // 1. ดึงชื่อจาก Cookie 'username'
     const username = getCookie('username'); 
-    
+    const userImg = getCookie('img');
     // 2. อ้างอิง Element ที่เราเพิ่งแก้ ID ไปใน HTML
+    const imgElement = document.getElementById('profile-img-display');
     const profileNameElement = document.getElementById('current-user-name');
 
     // 3. ถ้ามีชื่อใน Cookie และเจอ Element ให้แสดงผล
+    if (username && userImg && imgElement) {
+        imgElement.style.backgroundImage = `url(CSS/Pictures/img/${userImg})`;
+    }
     if (username && profileNameElement) {
         profileNameElement.textContent = '@' + decodeURIComponent(username);
-    } else {
+    }
+    const nameElement = document.getElementById('current-user-name');
+    if (username && nameElement) {
+        nameElement.textContent = '@' + decodeURIComponent(username);
+    }
+    else {
         // กรณีไม่มี Cookie (อาจจะยังไม่ Login)
         if(profileNameElement) profileNameElement.textContent = '@Guest';
+        
     }
 }
 // ฟังก์ชันอัปเดตคะแนนที่แสดงบนหน้าจอ
@@ -89,8 +99,7 @@ async function pop(){
         hear.src = "CSS/Pictures/Backgrounds/here2.png";
     }, 250);
 
-    const audio = new Audio('SFX/POPs AND JINGLES/POP 1.wav'); 
-    audio.play();
+    document.getElementById('soundEffect').play();
 
     // 2. ส่งคำขอไปอัปเดตคะแนนบนเซิร์ฟเวอร์
     try {

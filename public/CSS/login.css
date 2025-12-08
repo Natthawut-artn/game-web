@@ -101,3 +101,8 @@ hr{
     font-size: 0.75rem;
     font-family: Arial, Helvetica, sans-serif;
 }
+#error{
+    width: 90%;
+    text-align: red;
+    font-size: 0.75rem;
+}

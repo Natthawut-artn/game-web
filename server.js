@@ -285,8 +285,6 @@ app.post('/postCommentToUser', async (req, res) => {
 app.post('/checkLogin', async (req,res) => {
     try {
         const { username, password } = req.body;
-        console.log(username)
-        console.log(password)
         
         // แก้ SQL ให้ใช้ Username (PK)
         let sql = `SELECT * FROM ${userTable} WHERE Username = '${username}'`;
