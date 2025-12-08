@@ -34,6 +34,7 @@ body{
     display: flex;
     justify-content: center;
     flex-direction: column;
+    position: relative;
 }
 #feilds > h1{
     font-size: calc(2.5rem,3vw,1.5rem);
@@ -105,13 +106,24 @@ hr{
 }
 #error{
     width: 90%;
-    text-align: red;
-    font-size: 0.75rem;
+    text-align: right;
+    color: red;
+    font-size: 1rem;
+    position: absolute;
+    top: 40px;
+    right: 30px;
 }
 
 @media (width <= 500px) {
     #container{
         width: 300px;
         height: 500px;
+    }
+    #error{
+        position: relative;
+        top: -15px;
+        right: 0;
+        left: 25px;
+        text-align: left;
     }
 }

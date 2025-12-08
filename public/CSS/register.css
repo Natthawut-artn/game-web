@@ -93,10 +93,19 @@ input::placeholder{
     background: #b95c50;
     transition: 0.25s;
 }
+#error{
+    width: 90%;
+    color: red;
+    position: relative;
+    top: 20px;
+}
 
 @media (width <= 500px){
     #container{
         width: 300px;
         height: 500px;
+    }
+    #error{
+        font-size: 0.75rem;
     }
 }

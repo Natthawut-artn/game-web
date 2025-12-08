@@ -150,12 +150,11 @@ app.post('/regisDB', async (req,res) => {
 
         await queryDB(insertLikeSql);
 
-        return res.redirect('index.html');
-
+        return res.json({ status: "success" });
     } catch (err) {
         console.error("Error during registration:", err);
         // ถ้าเป็น Error ข้อมูลซ้ำ ให้กลับไปหน้า Register
-        return res.redirect('register.html');
+        return res.json({ status: "error", message: "invalid credentials" });
     }
 });
 
@@ -292,7 +291,7 @@ app.post('/checkLogin', async (req,res) => {
 
         if (result.length === 0) {
             console.log("Login fail: user not found");
-            return res.redirect('index.html?error=1');
+            return res.json({ status: "error1", message: "user not found" });
         }
 
         const foundUser = result[0];
@@ -304,14 +303,14 @@ app.post('/checkLogin', async (req,res) => {
             console.log("Login success");
             res.cookie('username', foundUser.Username);
             res.cookie('img', foundUser.Picture); // ใช้ column Picture
-            return res.redirect('gameplay.html');
+            return res.json({ status: "success" });
         } else {
             console.log("Login fail: wrong password");
-            return res.redirect('index.html?error=1');
+            return res.json({ status: "error1", message: "wrong password" });
         }
     } catch (err) {
         console.error("Error during login:", err);
-        return res.redirect('index.html?error=1');
+        return res.json({ status: "error2", message: "cannot connect to server" });
     }
 });
 

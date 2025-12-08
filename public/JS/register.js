@@ -53,20 +53,21 @@ function init() {
                 body: JSON.stringify(payload) 
             });
 
+            const data = await res.json();
+
             // 5. จัดการการตอบกลับจากเซิร์ฟเวอร์ (โดยใช้การตรวจสอบ Redirect)
-            if (res.redirected) {
+            if (data.status === "success") {
                 // เซิร์ฟเวอร์ส่ง res.redirect() กลับมา (สำเร็จไป index.html หรือล้มเหลวไป register.html)
-                console.log("Registration complete. Redirecting to:", res.url);
-                window.location.href = res.url;
+                window.location.href = "index.html";
             } else {
                 // หากไม่มีการ redirect (อาจเป็น error 500 หรือปัญหาอื่นๆ)
                 console.error("Registration response received without redirection. Status:", res.status);
-                alert("การลงทะเบียนล้มเหลวเนื่องจากข้อผิดพลาดของเซิร์ฟเวอร์ กรุณาลองใหม่อีกครั้ง");
+                document.getElementById('error').innerHTML = "Your username or gmail is already used";
             }
 
         } catch (err) {
             console.error("Registration request failed (Network error or exception):", err);
-            alert("ไม่สามารถเชื่อมต่อกับเซิร์ฟเวอร์ได้ กรุณาตรวจสอบการเชื่อมต่อของคุณ");
+            document.getElementById('error').innerHTML = "Cannot connect to server. Please try again.";
         }
     });
 }
