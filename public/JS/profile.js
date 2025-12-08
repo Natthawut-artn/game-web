@@ -32,7 +32,7 @@ function getCookie(name) {
                     
                     // อัปเดตรูปโปรไฟล์
                     const userImg = getCookie('img') || 'default.jpeg';
-                    document.getElementById('user-pro').innerHTML = `<img id="current-profile-pic" src="CSS/Pictures/img/${userImg}" width="160px" height="160px" style="border-radius: 50%; object-fit: cover;">`;
+                    document.getElementById('user-pro').style.backgroundImage = `url(CSS/Pictures/img/${userImg})`;
                 } else {
                     console.error("Failed to load profile data:", profileData.error);
                 }

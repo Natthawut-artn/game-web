@@ -5,15 +5,17 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 body{
-     background: url(Pictures/Backgrounds/Untitled\ design.png);
+    background: url(Pictures/Backgrounds/Untitled\ design.png);
     background-size: 70%;
     background-position: center;
     height: 100vh;
-    overflow: hidden;
+    overflow-y: auto;
 
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    padding: 50px;
 }
 #user-info , #user-comment{
     background: white;
@@ -29,6 +31,7 @@ body{
     padding: 10px;
     margin-left: 10px ;
     margin-right: 10px ;
+    box-shadow: 8px 8px 8px rgb(0, 0, 0, 0.5);
 }
 #user-pro{
     background: url(Pictures/Icons/here.png);
@@ -43,20 +46,24 @@ body{
     text-align: center;
 }
 #back{
-    position: absolute;
-    left: 2.5%;
+    position: fixed;
+    left: 0;
     top: 2.5%;
 
     width: 100px;
     height: 100px;
 }
 #logout{
-    position: absolute;
-    right: 2.5%;
+    position: fixed;
+    right: 0;
     bottom: 2.5%;
 
     width: 100px;
     height: 100px;
+}
+#back > a > img , #logout > a > img{
+    width: 100%;
+    height: 100%;
 }
 
 #user-comment{
@@ -65,4 +72,33 @@ body{
     overflow-y: auto;
 
     padding: 25px;
+}
+
+@media (width < 940px){
+    body{
+        height: auto;
+        justify-content: space-around;
+    }
+    #user-info{
+        margin-bottom: 25px;
+    }
+}
+@media (width <= 600px){
+    body{
+        padding: 15px;
+    }
+    #back, #logout{
+        width: 50px;
+        height: 50px;
+    }
+    #user-pro{
+        width: 120px;
+        height: 120px;
+    }
+}
+@media (width <= 400px){
+    body{
+        padding-left: 0;
+        padding-right: 0;
+    }
 }

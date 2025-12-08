@@ -20,6 +20,7 @@ body{
     justify-content: space-around;
     align-items: center;
     position: relative;
+    overflow: hidden;
 }
 h1{
     font-size: 4rem;
