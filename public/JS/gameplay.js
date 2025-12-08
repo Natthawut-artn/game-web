@@ -9,6 +9,7 @@ function init(){
     // ดึงคะแนนเริ่มต้นเมื่อโหลดหน้า
     fetchInitialScore(); 
     initcommentpopup();
+    InitLeaderBoardBtn();
 
     displayCurrentUser();
     if (typeof initLeaderboard === 'function') {
@@ -18,6 +19,14 @@ function init(){
         }, 3000); // 3000ms = 3 วินาที
     }
 }
+
+function InitLeaderBoardBtn(){
+    let btn = document.getElementById('leader')
+    btn.addEventListener('click',() =>{
+        btn.classList.toggle('show-popup');
+    })
+}
+
 // ฟังก์ชันช่วยดึงค่าจาก Cookie ตามชื่อที่ระบุ
 function getCookie(name) {
     const value = `; ${document.cookie}`;
@@ -99,7 +108,7 @@ async function pop(){
         hear.src = "CSS/Pictures/Backgrounds/here2.png";
     }, 250);
 
-    document.getElementById('soundEffect').play();
+    // document.getElementById('soundEffect').play();
 
     // 2. ส่งคำขอไปอัปเดตคะแนนบนเซิร์ฟเวอร์
     try {
