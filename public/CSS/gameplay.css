@@ -19,20 +19,28 @@ body{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    position: relative;
 }
 h1{
     font-size: 4rem;
     color: aliceblue;
-    position: relative; 
+    position: absolute; 
+    top: 0;
+}
+#score{
+    position: absolute; 
     top: 25px;
 }
 #hear{
-    height: 100%;
-    transform: scale(1.2);
+    width: 1100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 #leader{
     width: 680px;
-    height: 400px;
+    height: 100vh;
     padding: 15px;
 
     position: absolute;
@@ -42,6 +50,7 @@ h1{
 
     background: white;
     border-radius: 12px 12px 0 0;
+    cursor: pointer;
 
     display: flex;
     flex-direction: column;
@@ -56,7 +65,7 @@ h1{
     text-align: center;
 }
 #board{
-    max-height: 400px;      /* ปรับตัวเลขนี้ตามความเหมาะสมของหน้าจอครับ */
+    max-height: 100%;      /* ปรับตัวเลขนี้ตามความเหมาะสมของหน้าจอครับ */
     
     /* 2. สั่งให้มี Scrollbar ถ้าข้อมูลล้น */
     overflow-y: auto;       /* auto = มี scrollbar เฉพาะตอนจำเป็น */
@@ -86,7 +95,7 @@ h1{
 }
 #profile-page{
     position: absolute;
-    right: 2.5%;
+    right: 0;
     top: 2.5%;
 
     width: 200px;
@@ -102,8 +111,8 @@ h1{
     height: 100%;
 }
 #profile-img-display{
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
     background: white;
     border-radius: 100px;
     background-position: center;
@@ -119,7 +128,7 @@ h1{
     left: 50%;
     transform: translate(-50%, -50%);
 
-    width: 800px;
+    width: 750px;
     height: 500px;
     background: white;
     box-shadow: 8px 8px 8px rgb(0, 0, 0, 0.5);
@@ -202,4 +211,108 @@ h1{
 /* 4. ปรับรูปภาพและเลขลำดับให้ไม่หดตัว */
 .b img, .b h4:first-of-type {
     flex-shrink: 0;           /* ห้ามหด */
+}
+
+@media (width <= 800px) {
+    #score{
+        font-size: 2.5rem;
+    }
+    #profile-page{
+        top: 0;
+    }
+    #profile-img-display{
+        width: 50px;
+        height: 50px;
+    }
+    #current-user-name{
+        font-size: 0.75rem;
+    }
+    #leader{
+        width: 500px;
+    }
+    #comment-popup{
+        width: 525px;
+    }
+}
+@media (width <= 525px){
+    #score{
+        font-size: 1.5rem;
+    }
+    #profile-page{
+        right: -50px;
+    }
+    #leader{
+        width: 100vw;
+    }
+    #hear{
+        width: 250%;
+        bottom: -20%;
+    }
+    #board{
+        font-size: 0.75rem;
+    }
+    #comment-popup{
+        width: 100%;
+    }
+    #myform > div{
+        width: 150px;
+        height: 45px;
+    }
+    #user-target{
+        font-size: 1rem;
+    }
+}
+
+@media (height >= 630px){
+    #hear{
+        transform: translate(-50%, -50%);
+    }
+    #leader{
+        top: 90%;
+    }
+}
+@media (height >= 830px){
+    #hear{
+        transform: translate(-50%, -60%);
+    }
+    #leader{
+        top: 70%;
+    }
+        #leader.show-popup{
+        top: 40%;
+    }
+}
+@media (height >= 930px){
+    #hear{
+        transform: translate(-50%, -65%);
+    }
+    #leader{
+        top: 60%;
+    }
+        #leader.show-popup{
+        top: 35%;
+    }
+}
+@media (height >= 1030px){
+    #hear{
+        transform: translate(-50%, -77.5%);
+    }
+    #leader{
+        top: 50%;
+    }
+    #leader.show-popup{
+        top: 30%;
+    }
+}
+
+@media (height >= 1230px){
+    #hear{
+        transform: translate(-50%, -85%);
+    }
+    #leader{
+        top: 40%;
+    }
+    #leader.show-popup{
+        top: 25%;
+    }
 }
