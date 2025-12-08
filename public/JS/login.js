@@ -44,9 +44,6 @@ function init(){
                 // หากเซิร์ฟเวอร์ส่งคำสั่ง redirect (สำเร็จหรือล้มเหลวก็ตาม)
                 console.log("Redirecting to:", res.url);
                 window.location.href = res.url;
-                if(window.location.href === "http://localhost:3000/index.html?error=1"){
-                    document.getElementById('error').innerHTML = "username or password incorrect"
-                }
             } else if (res.status === 200) {
                  // กรณีนี้แทบจะไม่เกิดขึ้น หากเซิร์ฟเวอร์ใช้ res.redirect()
                  // แต่ถ้าเซิร์ฟเวอร์ส่ง 200 มาโดยไม่มี redirect ให้อัพเดตหน้าตามความเหมาะสม
