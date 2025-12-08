@@ -57,9 +57,16 @@ h1{
     text-align: center;
 }
 #board{
+    max-height: 400px;      /* ปรับตัวเลขนี้ตามความเหมาะสมของหน้าจอครับ */
+    
+    /* 2. สั่งให้มี Scrollbar ถ้าข้อมูลล้น */
+    overflow-y: auto;       /* auto = มี scrollbar เฉพาะตอนจำเป็น */
+    overflow-x: hidden;     /* ปิดการเลื่อนแนวนอน */
+    
+    /* สไตล์อื่นๆ คงเดิม */
     width: 100%;
-    height: 100%;
-    margin-top: 10px;
+    padding: 10px;
+    box-sizing: border-box;
 }
 #index{
     display: flex;
@@ -153,4 +160,45 @@ h1{
     background: url(Pictures/Icons/sent.png);
     background-size: cover;
     background-position: center;
+}
+#like-btn {
+    width: 30px;  /* ปรับขนาดตามต้องการ */
+    height: 30px;
+}
+/* 1. จัดการกล่องแถว (Container) ให้เป็นแนวนอนเสมอ */
+.b {
+    display: flex;            /* เรียงลูกๆ เป็นแนวนอน */
+    align-items: center;      /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+    justify-content: flex-start; /* เริ่มเรียงจากซ้ายไปขวา */
+    width: 100%;              /* ความกว้างเต็มพื้นที่ */
+    padding: 10px;            /* ระยะห่างภายใน */
+    box-sizing: border-box;   /* นับรวม padding ในความกว้าง */
+    gap: 10px;                /* ระยะห่างระหว่างไอเท็มแต่ละตัว */
+    
+    /* สไตล์เพิ่มเติม (ถ้ามีของเดิมอยู่แล้วให้คงไว้) */
+    background-color: #ffffff; 
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* 2. จัดการชื่อ User (ไม่ให้ขึ้นบรรทัดใหม่) */
+.user-name-display {
+    white-space: nowrap;      /* ห้ามขึ้นบรรทัดใหม่เด็ดขาด */
+    overflow: hidden;         /* ส่วนที่เกินให้ซ่อนไว้ */
+    text-overflow: ellipsis;  /* แสดง ... ถ้าข้อความยาวเกิน */
+    max-width: 150px;         /* กำหนดความกว้างสูงสุดของชื่อ (ปรับตัวเลขได้ตามใจชอบ) */
+    margin: 0;                /* ลบ margin รอบๆ เพื่อความชัวร์ */
+    flex-grow: 1;             /* ให้ชื่อขยายกินพื้นที่ว่างที่เหลือได้ (แต่ไม่เกิน max-width) */
+}
+
+/* 3. จัดการคะแนน (Score) */
+.user-score-display {
+    white-space: nowrap;      /* คะแนนห้ามตกบรรทัด */
+    margin-left: auto;        /* ดันคะแนนไปติดขวาสุดเท่าที่จะทำได้ */
+    flex-shrink: 0;           /* ห้ามคะแนนหดตัว */
+}
+
+/* 4. ปรับรูปภาพและเลขลำดับให้ไม่หดตัว */
+.b img, .b h4:first-of-type {
+    flex-shrink: 0;           /* ห้ามหด */
 }

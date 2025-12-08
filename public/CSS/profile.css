@@ -37,7 +37,7 @@ body{
     width: 160px;
     height: 160px;
     border-radius: 100px;
-    border: 2px black solid;
+    /* border: 2px black solid; */
 }
 #user-miniheart{
     text-align: center;

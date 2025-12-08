@@ -1,7 +1,6 @@
 window.onload = init
 
 function init(){
-    console.log("init"); // ปรับปรุงการ log
 
     // ไม่ต้องใช้ document.addEventListener("DOMContentLoaded", ...) ซ้อน เพราะ window.onload ก็เพียงพอแล้ว
     const form = document.getElementById("myform");

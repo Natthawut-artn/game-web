@@ -4,16 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/profile.css">
-    <title>Document</title>
+    <script type="text/javascript" src="JS/profile.js"></script>
+    <title>User Profile</title>
 </head>
 <body>
-    
-    <div id="user-info">
-        <div id="user-pro"></div>
+        <div id="user-info">
+                <form id="uploadForm" action="/profilepic" method="POST" enctype="multipart/form-data">
+                    <input id="file-input" type="file" name="avatar" accept="image/*" style="display: none;" onchange="document.getElementById('uploadForm').submit()">
+                </form>
+                <div id="user-pro" onclick="document.getElementById('file-input').click();" style="cursor: pointer;" title="แตะเพื่อเปลี่ยนรูปโปรไฟล์">
+            </div>
+
         <h2 id="user-name">natthawut123</h2>
         <h2 id="user-email">natthawut@gmail.com</h2>
-        <h2 id="user-index">Rank : 5</h2>
-        <h2 id="user-index">Points : 123</h2>
+        <h2 id="user-index">Rank : </h2>   <!-- ยาดแก้ตรงนี้นะ -->
+        <h2 id="user-score">Points : </h2> <!-- ยาดแก้ตรงนี้นะ -->
         <div id="user-miniheart">
             <img src="CSS/Pictures/Icons/jai.png" width="50px" height="50px">
             <h3 id="miniheart-amout">5637</h3>
